@@ -10,3 +10,12 @@ skip_render:
   - .github/ISSUE_TEMPLATE.md
   - .github/PULL_REQUEST_TEMPLATE.md
   - .github/workflows
+azure:
+  store_build_artifacts: True
+channels:
+  sources:
+    - valmar
+    - conda-forge
+    - defaults
+  targets:
+    - ["valmar", "psana1"]
