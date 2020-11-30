@@ -2,3 +2,5 @@
     - valmar,conda-forge,defaults
   channel_targets:
     - valmar psana
+  python:
+  - 2.7.* *_cpython  # [not (aarch64 or ppc64le or win)]]
