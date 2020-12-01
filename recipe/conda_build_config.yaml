@@ -1,6 +1,10 @@
-  channel_sources:
-    - valmar,conda-forge,defaults
-  channel_targets:
-    - valmar psana
-  python:
+channel_sources:
+  - valmar,conda-forge,defaults
+channel_targets:
+  - valmar psana
+python:
   - 2.7.* *_cpython  # [not (aarch64 or ppc64le or win)]]
+python_impl:
+  - cpython  # [not (aarch64 or ppc64le or win)]]
+numpy:
+  - 1.16  # [not (aarch64 or ppc64le or win)]]
