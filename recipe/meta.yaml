@@ -58,7 +58,6 @@ requirements:
     - mpi4py
     - ndarray-psana
     - pytables
-    - future
     - six
     - curl
     - libcurl 
