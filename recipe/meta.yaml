@@ -30,6 +30,8 @@ requirements:
   host:
     - python
     - scons
+    - boost-cpp
+    - boost
     - cython
     - xorg-libxfixes
     - qt
@@ -46,8 +48,6 @@ requirements:
     - zlib
   run:
     - python
-    - boost-cpp
-    - boost
     - qt
     - numpy
     - matplotlib-base
