@@ -33,6 +33,7 @@ requirements:
     - cython
     - xorg-libxfixes
     - qt
+    - matplotlib-base
     - openmpi
     - ndarray-psana
     - hdf5
