@@ -79,7 +79,7 @@ sed -i 's/g++/$(CXX)/g' extpkgs/pdsdata/flags.mk
 # in conda.
 
 ${PREFIX}/bin/python $mkanarel 
-${PREFIX}/bin/scons
+${PREFIX}/bin/scons -j2
 ${PREFIX}/bin/python $mkanarel copy_depends
 
 # need to switch back to full testing once they work - cpo
