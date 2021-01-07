@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 03242196fa7c7946af32ac8d664b68ff59b510029c407c4c84b0efa87ade302a
+  sha256: 0db8cd722a06a3db057cab2baf49f5ce508b1ff65835eb3b5120dfcad40f6a96
   patches:
     - ndarray_ext.patch
 
