@@ -11,7 +11,7 @@ cdt_name:
 channel_sources:
 - valmar,conda-forge,defaults
 channel_targets:
-- valmar psana
+- valmar main
 curl:
 - '7'
 cxx_compiler:
