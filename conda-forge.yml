@@ -30,4 +30,4 @@ channels:
     - conda-forge
     - defaults
   targets:
-    - ["valmar", "psana"]
+    - ["valmar", "main"]
