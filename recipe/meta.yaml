@@ -1,5 +1,5 @@
 {% set name = 'psana' %}
-{% set version = '4.0.1' %}
+{% set version = '4.0.7' %}
 
 package:
   name: {{ name|lower }}
