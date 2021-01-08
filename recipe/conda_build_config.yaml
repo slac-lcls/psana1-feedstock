@@ -5,7 +5,7 @@ channel_targets:
 
 python:
   # part of a zip_keys: python, python_impl, numpy
-  - 2.7.* *_cpython  # [not (aarch64 or ppc64le or win)]]
+  - 2.7.15 *_cpython  # [not (aarch64 or ppc64le or win)]]
   - 3.6.* *_cpython    # [not (osx and arm64)]
   - 3.7.* *_cpython    # [not (osx and arm64)]
   - 3.8.* *_cpython
