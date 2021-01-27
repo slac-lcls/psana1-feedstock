@@ -27,11 +27,11 @@ libcurl:
 libpng:
 - '1.6'
 libtiff:
-- 4.1.0
+- '4'
 libuuid:
 - 2.32.1
 openmpi:
-- '4.0'
+- '4'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
