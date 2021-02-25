@@ -30,8 +30,6 @@ libtiff:
 - '4'
 libuuid:
 - 2.32.1
-openmpi:
-- '4'
 pin_run_as_build:
   boost:
     max_pin: x.x.x
