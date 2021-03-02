@@ -1,5 +1,5 @@
 {% set name = 'psana' %}
-{% set version = '4.0.16' %}
+{% set version = '4.0.17' %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: bd19eb1718b57138b7677e9c96c5e69fad48214cfa71060fea821394465ae96b
+  sha256: 2192a6133550fda6e7bc6a3417d799912c89f6d7ea73cdba121bea9d8f712d68
   patches:
     - ndarray_ext.patch
 
@@ -36,7 +36,6 @@ requirements:
     - xorg-libxfixes
     - qt
     - matplotlib-base
-    - openmpi
     - ndarray-psana
     - hdf5
     - curl
@@ -56,7 +55,6 @@ requirements:
     - hdf5
     - h5py
     - _openmp_mutex
-    - mpi4py
     - ndarray-psana
     - pytables
     - six
