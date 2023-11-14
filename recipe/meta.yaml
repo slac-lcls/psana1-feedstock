@@ -1,5 +1,5 @@
 {% set name = 'psana' %}
-{% set version = '4.0.52' %}
+{% set version = '4.0.56' %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 804c9671d134cad10c9933c95f42a824aab26c46241d0fde8574869cb7e5db96
+  sha256: 443440bf7a7fdbcdf89314b68c07f97f5a89dff38d6da98685e74f0671fac37d
   patches:
     - ndarray_ext.patch
     - header.patch
@@ -92,3 +92,4 @@ extra:
   recipe-maintainers:
     - valmar
     - chrisvam
+    - dubrovin
