@@ -6,8 +6,9 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 565a3248bafb146ee2fa999c0c834d34efe7a6250617592bc36fc585a3036beb
+#  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
+  url: file:///sdf/group/lcls/ds/ana/sw/conda1/manage/downloads/anarel/{{ name }}-conda-{{ version }}.tar.gz
+  sha256: 0fd363a0f1c347bb70ba8f3e77c3bbfa8827d09f4afe0ad08c0d513dc6ef385c
   patches:
     - ndarray_ext.patch
     - header.patch
@@ -71,8 +72,11 @@ requirements:
     - {{ pin_compatible('boost-cpp') }}
 
 test:
+#  requires:
+#    - scons
   commands:
     - psana -h
+#    - scons test-Detector
 
 about:
   home: https://lcls.slac.stanford.edu
