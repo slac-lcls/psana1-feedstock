@@ -1,5 +1,5 @@
 {% set name = 'psana' %}
-{% set version = '4.0.56' %}
+{% set version = '4.0.58' %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,10 @@ package:
 
 source:
 #  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
-  url: file:///sdf/group/lcls/ds/ana/sw/conda1/manage/downloads/anarel/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 0fd363a0f1c347bb70ba8f3e77c3bbfa8827d09f4afe0ad08c0d513dc6ef385c
+#  url: https://s3df.slac.stanford.edu/people/psreldev/{{ name }}-conda-{{ version }}.tar.gz  # WARNING: Error: HTTP 403 FORBIDDEN for url
+#  url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/psana-conda-4.0.57.tar.gz
+  url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/{{ name }}-conda-{{ version }}.tar.gz
+  sha256: 3b805fe994292520e5bbecc3fa96e0f7f27f9fc1deaf300b2d0d5bee8c0afd1c
   patches:
     - ndarray_ext.patch
     - header.patch
@@ -72,11 +74,16 @@ requirements:
     - {{ pin_compatible('boost-cpp') }}
 
 test:
-#  requires:
-#    - scons
+  files:
+    - test_sample.py
+  source_files:
+    - Detector/test/test_detector
+  requires:
+    - pytest
   commands:
     - psana -h
-#    - scons test-Detector
+    - pytest test_sample.py
+    - python Detector/test/test_detector
 
 about:
   home: https://lcls.slac.stanford.edu
