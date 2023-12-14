@@ -14,7 +14,8 @@ fi
 export SIT_RELEASE=`cat .sit_release`
 
 if [ -z "$SIT_ROOT" ]; then
-    export SIT_ROOT=/reg/g/psdm
+    #export SIT_ROOT=/reg/g/psdm
+    export SIT_ROOT=/sdf/group/lcls/ds/ana
     echo "SIT_ROOT was not defined, set it to $SIT_ROOT"
 fi
 
