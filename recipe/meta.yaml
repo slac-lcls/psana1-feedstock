@@ -10,11 +10,11 @@ source:
 #  url: https://s3df.slac.stanford.edu/people/psreldev/{{ name }}-conda-{{ version }}.tar.gz  # WARNING: Error: HTTP 403 FORBIDDEN for url
 #  url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/psana-conda-4.0.57.tar.gz
   url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 3b805fe994292520e5bbecc3fa96e0f7f27f9fc1deaf300b2d0d5bee8c0afd1c
+  sha256: 10487cc16180812605f44b475344b4136cc9565686a4a16a496461480905f52d
   patches:
-    - ndarray_ext.patch
-    - header.patch
     - sysroot.patch
+#    - ndarray_ext.patch
+#    - header.patch
 
 build:
   skip: True  # [win or osx]
@@ -53,6 +53,7 @@ requirements:
   run:
     - python=3.9
     - qt
+    - pyqt
     - numpy
     - matplotlib-base
     - scipy
@@ -78,12 +79,14 @@ test:
     - test_sample.py
   source_files:
     - Detector/test/test_detector
+    - Detector/test/pytest_detector.py
   requires:
     - pytest
   commands:
     - psana -h
     - pytest test_sample.py
     - python Detector/test/test_detector
+    - pytest Detector/test/pytest_detector.py
 
 about:
   home: https://lcls.slac.stanford.edu
