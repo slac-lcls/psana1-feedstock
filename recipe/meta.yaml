@@ -66,13 +66,13 @@ requirements:
     - six
     - curl
     - libcurl 
-    - libtiff
     - libpng
     - libuuid
     - six
     - zlib
     - {{ pin_compatible('boost') }}
     - {{ pin_compatible('boost-cpp') }}
+    - {{ pin_compatible('libtiff') }}
 
 test:
   files:
