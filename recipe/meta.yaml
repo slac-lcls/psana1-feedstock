@@ -1,5 +1,5 @@
 {% set name = 'psana' %}
-{% set version = '4.0.58' %}
+{% set version = '4.0.62' %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,11 @@ package:
 source:
 #  url: https://pswww.slac.stanford.edu/swdoc/tutorials/{{ name }}-conda-{{ version }}.tar.gz
 #  url: https://s3df.slac.stanford.edu/people/psreldev/{{ name }}-conda-{{ version }}.tar.gz  # WARNING: Error: HTTP 403 FORBIDDEN for url
-#  url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/psana-conda-4.0.57.tar.gz
+#  url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/psana-conda-4.0.62.tar.gz
   url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 10487cc16180812605f44b475344b4136cc9565686a4a16a496461480905f52d
-  patches:
+  sha256: 489f3a43ee6177ee3ed73c7507b4bc837a6301e6a1bafe8f2193af332fec5088
+
+patches:
     - sysroot.patch
 #    - ndarray_ext.patch
 #    - header.patch
@@ -78,15 +79,15 @@ test:
   files:
     - test_sample.py
   source_files:
-    - Detector/test/test_detector
     - Detector/test/pytest_detector.py
+    - Detector/test/unittest_detector
   requires:
     - pytest
   commands:
     - psana -h
     - pytest test_sample.py
-    - python Detector/test/test_detector
     - pytest Detector/test/pytest_detector.py
+    - python Detector/test/unittest_detector
 
 about:
   home: https://lcls.slac.stanford.edu
