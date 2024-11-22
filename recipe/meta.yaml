@@ -1,5 +1,5 @@
 {% set name = 'psana' %}
-{% set version = '4.0.63' %}
+{% set version = '4.0.64' %}
 
 package:
   name: {{ name|lower }}
@@ -10,21 +10,25 @@ source:
 #  url: https://s3df.slac.stanford.edu/people/psreldev/{{ name }}-conda-{{ version }}.tar.gz  # WARNING: Error: HTTP 403 FORBIDDEN for url
 #  url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/psana-conda-4.0.62.tar.gz
   url: file:///sdf/group/lcls/ds/ana/sw/conda1-v3/manage/downloads/anarel/{{ name }}-conda-{{ version }}.tar.gz
-  sha256: 5c16fb4490d920a05a6739b1f7085daaffac7ce9a9a242564382ebc752033357
+  sha256: f3d5c9157e8d96301b72dd8e63b71ff91d4f8a9350caa50710e41a48890da0b5
+  patches:
+    #- sysroot.patch
+    - header.patch
 
-patches:
-    - sysroot.patch
 #    - ndarray_ext.patch
 #    - header.patch
 
 build:
   skip: True  # [win or osx]
-  number: 1
+  number: 2
+  patches:
+    - header.patch
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
     - {{ cdt('mesa-libgl-devel') }}
     - {{ cdt('mesa-dri-drivers') }}
     - {{ cdt('libselinux') }}
@@ -51,11 +55,12 @@ requirements:
     - libuuid
     - six
     - zlib
+    - numpy=1
   run:
     - python=3.9
     - qt
     - pyqt
-    - numpy
+    - numpy=1
     - matplotlib-base
     - scipy
     - pyzmq

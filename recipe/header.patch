@@ -1,12 +1,12 @@
-diff --git a/ConfigSvc/include/ConfigSvc.h b/ConfigSvc/include/ConfigSvc.h
-index c9c68d0..6a7b632 100644
---- a/ConfigSvc/include/ConfigSvc.h
-+++ b/ConfigSvc/include/ConfigSvc.h
-@@ -16,6 +16,7 @@
+diff --git a/extpkgs/pdsdata/ana/XtcSlice.hh b/extpkgs/pdsdata/ana/XtcSlice.hh
+index 20f82a7..545be94 100644
+--- a/extpkgs/pdsdata/ana/XtcSlice.hh
++++ b/extpkgs/pdsdata/ana/XtcSlice.hh
+@@ -7,6 +7,7 @@
+ 
  #include <list>
- #include <memory>
  #include <string>
-+#include <vector>
- #include <boost/shared_ptr.hpp>
-
- //----------------------
++#include <pthread.h>
+ 
+ namespace Pds
+ {  
